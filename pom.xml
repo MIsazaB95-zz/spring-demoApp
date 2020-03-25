@@ -70,6 +70,13 @@
 					<testSource>1.8</testSource>
 					<testTarget>1.8</testTarget>
 					<encoding>ISO-8859-1</encoding>
+					<archive>
+						<manifest>
+						  <addClasspath>true</addClasspath>
+						  <classpathPrefix>lib/</classpathPrefix>
+						  <mainClass>com.acalderon.demoBack.Application</mainClass>
+						</manifest>
+					  </archive>					
 				</configuration>
 			</plugin>
 			<plugin>
