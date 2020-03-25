@@ -65,18 +65,18 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<testSource>1.8</testSource>
-					<testTarget>1.8</testTarget>
-					<encoding>ISO-8859-1</encoding>
 					<archive>
 						<manifest>
 						  <addClasspath>true</addClasspath>
 						  <classpathPrefix>lib/</classpathPrefix>
 						  <mainClass>com.acalderon.demoBack.Application</mainClass>
 						</manifest>
-					  </archive>					
+					</archive>
+					<source>1.8</source>
+					<target>1.8</target>
+					<testSource>1.8</testSource>
+					<testTarget>1.8</testTarget>
+					<encoding>ISO-8859-1</encoding>					
 				</configuration>
 			</plugin>
 			<plugin>
