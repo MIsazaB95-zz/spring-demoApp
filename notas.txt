@@ -1,0 +1,4 @@
+Problemas encontrados:
+Cuando se trata de generar el .JAR del proyecto sale una exepción.
+Solución: se ejecutó mvn jar:jar install:install help:evaluate -Dexpression=project.name manualmente para identificar el fallo.
+El problema era los permisos sobre el archivo pom.properties, este no dejaba generar el .JAR, se cambiaron los permisos sobre el archivo.

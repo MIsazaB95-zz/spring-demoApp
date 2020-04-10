@@ -4,7 +4,7 @@ pipeline {
     ARTIFACT_ID = "miguelisaza95/spring-demo:${env.BUILD_NUMBER}"
   }
   options {
-    timeout(time: 2, unit: 'MINUTES')
+    timeout(time: 10, unit: 'MINUTES')
   }
   stages {
     stage('Build') {
