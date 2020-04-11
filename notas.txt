@@ -1,1 +1,2 @@
 Recomendable realizar todo el ciclo de Maven, hasta Package.
+Debido a que necesito empaquetar la aplicación en un contenedor, se omitirá el paso Deliver ya que no lo quiero ejecutar en la VM, quiero subirlo a docker hub y probar.

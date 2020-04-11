@@ -27,13 +27,6 @@ pipeline {
         sh 'mvn package'
       }
     }
-    stage('Deliver') {
-      steps {
-        sh '''chmod +x ./scripts/deliver.sh
-./scripts/deliver.sh'''
-      }
-    }
-
     stage('Build docker') {
       steps {
         script {
