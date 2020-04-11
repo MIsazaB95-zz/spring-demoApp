@@ -7,14 +7,24 @@ pipeline {
     timeout(time: 10, unit: 'MINUTES')
   }
   stages {
-    stage('Build') {
+    stage('Clean') {
       steps {
-        sh 'mvn -B -DskipTests clean package'
+        sh 'mvn clean'
+      }
+    }
+    stage('Validate') {
+      steps {
+        sh 'mvn validate'
       }
     }
     stage('Test') {
       steps {
         sh 'mvn test'
+      }
+    }
+    stage('Package') {
+      steps {
+        sh 'mvn package'
       }
     }
     stage('Deliver') {
