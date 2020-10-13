@@ -32,7 +32,6 @@ pipeline {
         script {
           dockerImage = docker.build "${env.ARTIFACT_ID}"
         }
-
       }
     }
     stage('Publish') {
@@ -42,7 +41,6 @@ pipeline {
             dockerImage.push()
           }
         }
-
       }
     }
   }
