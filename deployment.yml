@@ -22,7 +22,7 @@ spec:
         app: spring-app
     spec:
       containers:
-        - image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:latest
+        - image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:1
           imagePullPolicy: IfNotPresent
           name: spring-app
           ports:
