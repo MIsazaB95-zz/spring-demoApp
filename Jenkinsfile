@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    ARTIFACT_ID = "486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:${env.BUILD_NUMBER}"
+    ARTIFACT_ID = "486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:latest"
   }
   options {
     timeout(time: 5, unit: 'MINUTES')
@@ -47,7 +47,7 @@ pipeline {
       steps {
         script {
           sh '''
-          helm init rampup ./spring-demo
+          helm install rampup ./spring-demo
           kubecl get svc,po,deploy
           '''
         }

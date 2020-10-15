@@ -1,7 +1,7 @@
 # replicas and version values
 #
 replicas: 3
-version: '3'
+version: 'latest'
 
 # Service values
 #
