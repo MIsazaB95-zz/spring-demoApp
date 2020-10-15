@@ -37,7 +37,7 @@ pipeline {
     stage('Publish') {
       steps {
         script {
-          docker.withRegistry("https://486912667928.dkr.ecr.us-east-1.amazonaws.com","ecr:us-east-1:awsecr"){
+          docker.withRegistry("https://486912667928.dkr.ecr.us-east-1.amazonaws.com","ecr:us-east-1:AWSCLI"){
             dockerImage.push()
           }
         }
