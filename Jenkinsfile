@@ -45,7 +45,8 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        script {
+        withCredentials([[$class:'AmazonWebServicesCredentialsBinding', accessKeyVariable:'AWS_ACCESS_KEY_ID',
+        credentialsId: "AWSCLI", secretKeyVariable:'AWS_SECRET_ACCESS_KEY']]){
           sh '''
           aws eks --region us-east-1 update-kubeconfig --name eks_cluster_tuto
           helm install rampup ./spring-demo
