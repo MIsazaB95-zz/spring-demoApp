@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    ARTIFACT_ID = "486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-demo:${env.BUILD_NUMBER}"
+    ARTIFACT_ID = "486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:${env.BUILD_NUMBER}"
   }
   options {
     timeout(time: 5, unit: 'MINUTES')

@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-demo
+  name: spring-app
   namespace: default
   labels:
-    app: spring-demo
+    app: spring-app
 spec:
   replicas: 3
   minReadySeconds: 45
   selector:
     matchLabels:
-      app: spring-demo
+      app: spring-app
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,12 +19,12 @@ spec:
   template:
     metadata:
       labels:
-        app: spring-demo
+        app: spring-app
     spec:
       containers:
-        - image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-demo:latest
+        - image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:latest
           imagePullPolicy: IfNotPresent
-          name: spring-demo
+          name: spring-app
           ports:
             - containerPort: 8081
           resources:
