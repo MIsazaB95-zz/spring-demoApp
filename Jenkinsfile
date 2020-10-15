@@ -58,7 +58,8 @@ pipeline {
   }
   post {
     success {
-      script {
+        withCredentials([[$class:'AmazonWebServicesCredentialsBinding', accessKeyVariable:'AWS_ACCESS_KEY_ID',
+        credentialsId: "AWSCLI", secretKeyVariable:'AWS_SECRET_ACCESS_KEY']]){
         sh 'kubectl get svc spring-app -o jsonpath="{.status.loadBalancer.ingerss[*].hostname}"; echo'
       }
     }
