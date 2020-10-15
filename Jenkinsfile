@@ -44,11 +44,13 @@ pipeline {
       }
     }
     stage('Deploy') {
-      script {
-        sh '''
-        helm init rampup ./spring-demo
-        kubecl get svc,po,deploy
-        '''
+      steps {
+        script {
+          sh '''
+          helm init rampup ./spring-demo
+          kubecl get svc,po,deploy
+          '''
+        }
       }
     }
   }
