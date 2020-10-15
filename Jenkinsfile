@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    ARTIFACT_ID = "miguelisaza95/spring-demo:${env.BUILD_NUMBER}"
+    ARTIFACT_ID = "486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-demo:${env.BUILD_NUMBER}"
   }
   options {
     timeout(time: 5, unit: 'MINUTES')
@@ -37,7 +37,7 @@ pipeline {
     stage('Publish') {
       steps {
         script {
-          docker.withRegistry("","dockerhub"){
+          docker.withRegistry("https://486912667928.dkr.ecr.us-east-1.amazonaws.com","ecr:us-east-1:awsecr"){
             dockerImage.push()
           }
         }
