@@ -1,0 +1,9 @@
+# replicas and version values
+#
+replicas: 3
+version: '3'
+
+# Service values
+#
+java:
+  image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app

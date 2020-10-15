@@ -43,5 +43,20 @@ pipeline {
         }
       }
     }
+    stage('Deploy') {
+      script {
+        sh '''
+        helm init rampup ./spring-demo
+        kubecl get svc,po,deploy
+        '''
+      }
+    }
+  }
+  post {
+    success {
+      script {
+        sh 'kubectl get svc spring-app -o jsonpath="{.status.loadBalancer.ingerss[*].hostname}"; echo'
+      }
+    }
   }
 }

@@ -7,7 +7,6 @@ metadata:
     app: spring-app
 spec:
   replicas: 3
-  minReadySeconds: 45
   selector:
     matchLabels:
       app: spring-app
@@ -22,17 +21,9 @@ spec:
         app: spring-app
     spec:
       containers:
-        - image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:1
-          imagePullPolicy: IfNotPresent
+        - image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:3
+          imagePullPolicy: Always
           name: spring-app
           ports:
-            - containerPort: 8081
-          resources:
-            requests:
-              cpu: 100m
-              memory: 100Mi
-            limits:
-              cpu: 125m
-              memory: 120Mi
-      restartPolicy: Always
-      terminationGracePeriodSeconds: 30
+            - containerPort: 8080
+              protocol: TCP

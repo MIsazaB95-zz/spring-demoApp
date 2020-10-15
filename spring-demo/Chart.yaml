@@ -1,0 +1,8 @@
+# Description of the spring-demo chart
+#
+
+apiVersion: 2
+name: spring-demo
+description: A Helm chart for EKS rampup microservices application
+version: 0.1.0
+appVersion: 1.0
