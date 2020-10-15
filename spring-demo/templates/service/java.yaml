@@ -1,29 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
+  labels: #PODS
+    apps: spring-app
   name: spring-app
+  # annotations:
+  #     service.beta.kubernetes.io/aws-load-balancer-internal: "false"
   namespace: default
-  labels:
-    app: spring-app
 spec:
-  replicas: 3
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
   selector:
-    matchLabels:
-      app: spring-app
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
-  template:
-    metadata:
-      labels:
-        app: spring-app
-    spec:
-      containers:
-        - image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app:3
-          imagePullPolicy: Always
-          name: spring-app
-          ports:
-            - containerPort: 8080
-              protocol: TCP
+    app: spring-app
+  sessionAffinity: None
+  type: LoadBalancer 
+#If we don´t specify a service type, ClusterIP is going to be the default ServiceType.
