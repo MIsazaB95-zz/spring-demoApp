@@ -47,6 +47,7 @@ pipeline {
       steps {
         script {
           sh '''
+          aws eks --region us-east-1 update-kubeconfig --name eks_cluster_tuto
           helm install rampup ./spring-demo
           kubecl get svc,po,deploy
           '''
