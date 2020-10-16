@@ -5,5 +5,5 @@ version: 'latest'
 
 # Service values
 #
-java:
+spring:
   image: 486912667928.dkr.ecr.us-east-1.amazonaws.com/spring-app

@@ -21,7 +21,7 @@ spec:
         app: spring-app
     spec:
       containers:
-        - image: {{ .Values.java.image }}:{{ .Values.version }}
+        - image: {{ .Values.spring.image }}:{{ .Values.version }}
           imagePullPolicy: Always
           name: spring-app
           ports:
